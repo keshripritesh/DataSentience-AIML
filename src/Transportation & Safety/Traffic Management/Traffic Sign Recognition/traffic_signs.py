@@ -8,6 +8,7 @@ from keras.layers import Conv2D, MaxPool2D, Dense, Flatten, Dropout
 from keras.models import Sequential
 from keras.utils import to_categorical
 from sklearn.model_selection import train_test_split
+from utils import preprocess_image
 
 data = []
 labels = []
@@ -21,13 +22,11 @@ for i in range(classes):
 
     for a in images:
         try:
-            image = Image.open(path + '\\' + a)
-            image = image.resize((30, 30))
-            image = np.array(image)
-            data.append(image)
+            img_array = preprocess_image(os.path.join(path, a))  # Full path
+            data.append(img_array)
             labels.append(i)
-        except:
-            print("Error loading image")
+        except Exception as e:
+            print(f"Error loading image {a}: {e}")
 
 # Converting lists into numpy arrays
 data = np.array(data)
@@ -63,7 +62,6 @@ model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accur
 
 epochs = 15
 history = model.fit(X_train, y_train, batch_size=32, epochs=epochs, validation_data=(X_test, y_test))
-model.save("my_model.h5")
 
 # plotting graphs for accuracy
 plt.figure(0)
@@ -93,10 +91,11 @@ imgs = y_test["Path"].values
 
 data = []
 
-for img in imgs:
-    image = Image.open(img)
-    image = image.resize((30, 30))
-    data.append(np.array(image))
+for img_path in imgs:
+    try:
+        data.append(preprocess_image(img_path))
+    except Exception as e:
+        print(f"Error loading test image {img_path}: {e}")
 
 X_test = np.array(data)
 
@@ -109,4 +108,4 @@ from sklearn.metrics import accuracy_score
 
 # print(accuracy_score(labels, predict_x))
 
-model.save('traffic_classifier.h5')
+model.save('model.h5')

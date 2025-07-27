@@ -1,35 +1,40 @@
- MBTI Personality Type Classifier
-A simple NLP-based classifier that predicts a user's Myers–Briggs Type Indicator (MBTI) personality type based on their text posts using TF-IDF and Logistic Regression.
+MBTI Personality Type Classifier
+This project presents an NLP-based text classification model designed to predict a user's Myers–Briggs Type Indicator (MBTI) personality type from their written text posts.
 
 📌 Overview
-This project uses the MBTI 16 Personality Dataset from Kaggle to build a multi-class text classification model. The model predicts one of the 16 MBTI types (e.g., INFP, ESTJ, etc.) from a user's written posts.
+Leveraging the MBTI 16 Personality Dataset from Kaggle, this multi-class classification system employs TF-IDF for text vectorization and Logistic Regression for prediction. The goal is to classify input text into one of the 16 distinct MBTI types (e.g., INFP, ESTJ, etc.).
 
-[!ui screenshot](assets/image.png)
+
+[!ui screenshot](assets/Screenshot_7-7-2025_21646_localhost.jpeg)
+
 
 🧾 Dataset
-Source: Kaggle - MBTI Personality Type Dataset
+Source: Kaggle - MBTI Personality Type Dataset (or provide the direct URL if you have it)
 
-Columns:
+Key Columns:
 
-type: One of the 16 personality types.
+type: The assigned MBTI personality type.
 
-posts: A long string of text containing various posts written by the user.
+posts: A concatenated string of text posts from the user.
 
 🛠️ Project Structure
-bash
-Copy
-Edit
-mbti personality/
+mbti_personality_classifier/
 ├── data/
-│   └── mbti.csv                   # Dataset file
+│   └── mbti.csv                   # Raw dataset
 ├── models/
-│   └── model.pkl                    # Trained model + vectorizer + label encoder
-├── preprocess.py                    # Loads and preprocesses text data
-├── train.py                         # Trains and saves the model
-├── predict.py                       # Predicts MBTI type from new posts
-├── requirements.txt                 # Python package requirements
-└── README.md                        # Project documentation
-🧪 Model
-Vectorizer: TF-IDF (5000 max features, English stop words removed)
+│   └── trained_model_artifacts.pkl # Serialized model, TF-IDF vectorizer, and label encoder
+├── src/
+│   ├── preprocess.py              # Data loading and text preprocessing
+│   ├── train.py                   # Model training and saving logic
+│   └── predict.py                 # Inference script for new text inputs
+├── requirements.txt               # Python dependencies
+└── README.md                      # Project documentation (this file)
+🧪 Model Details
+Vectorizer: TF-IDF (Term Frequency-Inverse Document Frequency)
 
-Classifier: Logistic Regression (multi-class)
+max_features: 5000
+
+stop_words: English (removed)
+
+Classifier: Logistic Regression (configured for multi-class classification)
+
