@@ -1,7 +1,7 @@
 <!-- PROJECT TITLE AND BADGES -->
 <div align="center" id="top">
   <h1>🌐 <strong>DataSentience-AIML</strong> 💡</h1>
-  <h3>Part of Social Summer of Code 2025 🚀</h3>
+  <h3>Part of Social Summer of Code 2025 🚀 & GirlScript Summer of Code 2025 🚀</h3>
   <p><em>Harnessing AI across Healthcare, Finance, Agriculture, NLP, Safety & More</em></p>
   <br>
   <img src="https://img.shields.io/badge/Contributions-Welcome-brightgreen?style=for-the-badge" alt="Contributions Welcome" />

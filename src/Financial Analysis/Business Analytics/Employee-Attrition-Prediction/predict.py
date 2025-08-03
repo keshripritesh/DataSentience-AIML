@@ -65,6 +65,12 @@ with st.form("attrition_form"):
 
     submitted = st.form_submit_button("🔍 Predict")
 
+#derived features
+    daily_hours = daily_rate/hourly_rate
+    weekly_hours = daily_hours*5
+    standard_hours=40
+    deviation = weekly_hours-standard_hours
+
     if submitted:
         user_input = {
             'Age': age,
@@ -96,7 +102,10 @@ with st.form("attrition_form"):
             'YearsAtCompany': years_at_company,
             'YearsInCurrentRole': years_in_current_role,
             'YearsSinceLastPromotion': years_since_last_promotion,
-            'YearsWithCurrManager': years_with_curr_manager
+            'YearsWithCurrManager': years_with_curr_manager,
+            'EstimatedDailyHours': daily_hours,
+            'EstimatedWeeklyHours':weekly_hours,
+            'DeviationFromStandardHours':deviation
         }
 
         result = predict_attrition(user_input)

@@ -1,0 +1,106 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Streamlit
+.streamlit/
+
+# Model files and cache
+*.bin
+*.pt
+*.pth
+*.pkl
+*.safetensors
+models/
+cache/
+.cache/
+
+# Audio files
+*.mp3
+*.wav
+*.ogg
+*.flac
+*.sf2
+sounds/*.sf2
+
+# Generated files
+temp/
+exports/
+output/
+generated/
+*.mid
+*.midi
+
+# Logs
+*.log
+logs/
+
+# Environment variables
+.env
+.env.local
+.env.production
+.env.staging
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Test files
+test_output.*
+test_*.mid
+
+# Hugging Face cache
+.huggingface/
+transformers_cache/
+
+# PyTorch
+.torch/
+
+# Temporary files
+tmp/
+*.tmp
+*.temp

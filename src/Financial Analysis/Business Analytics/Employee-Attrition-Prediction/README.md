@@ -27,5 +27,15 @@ this screenshot contains the predicted results the sample data contsins in the p
 
 ---
 
+## 🔍 Enhancements
+
+- Added **manual upsampling** of the minority class to handle class imbalance.
+- Engineered new features:
+  - `EstimatedDailyHours` = DailyRate / HourlyRate
+  - `EstimatedWeeklyHours` = EstimatedDailyHours × 5
+  - `DeviationFromStandardHours` = EstimatedWeeklyHours - 40
+- Accuracy improved from **88.4% to 97.9%** on the test set.
+
+
 ## 🛠️ Project Structure
 
