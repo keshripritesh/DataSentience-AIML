@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ASD Screening – Prediction Form</title>
+  <style>
+    :root {
+      --bg1: #0f172a;
+      --bg2: #1e293b;
+      --card: #0b1224cc;
+      --accent: #7c3aed;
+      --accent-2: #22d3ee;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --success: #10b981;
+      --danger: #ef4444;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+      --focus-ring: 0 0 0 4px rgba(124, 58, 237, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial;
+      color: var(--text);
+      background: radial-gradient(1200px 800px at 10% -10%, #1f2455 0%, transparent 60%),
+                  radial-gradient(900px 700px at 100% 0%, #083344 0%, transparent 55%),
+                  linear-gradient(160deg, var(--bg1), var(--bg2));
+    }
+
+    main {
+      flex: 1;
+      width: 100%;
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 24px;
+    }
+    
+    select,
+    select option {
+    background-color: #1e293b; /* fallback: same as --bg2 */
+    color: var(--text);        /* light text color */
+    }
+
+    /* Optional: hover style inside dropdowns */
+    select option:hover,
+    select option:checked {
+    background-color: var(--accent-2);
+    color: #0f172a;
+    }
+
+    .card{
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      overflow: hidden;
+    }
+
+    .header{
+      padding: 28px 28px 16px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      display:flex; align-items:center; gap:14px; flex-wrap: wrap;
+    }
+    .badge{
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      color:#0b1020;
+      font-weight:700; font-size:12px; letter-spacing:.4px;
+      text-transform: uppercase;
+    }
+    h1{
+      margin:0;
+      font-size: clamp(22px, 2.2vw, 28px);
+      font-weight:800;
+      line-height:1.2;
+    }
+    button{
+      margin: 20px 15px;
+    }
+    .sub{
+      color:var(--muted);
+      margin: 8px 28px 0;
+      font-size: 14px;
+    }
+
+    form{ padding: 28px; }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+    .col-6{ grid-column: span 6; }
+    .col-12{ grid-column: span 12; }
+    @media (max-width: 900px){
+      .col-6, .col-12{ grid-column: span 12; }
+    }
+
+    .field{
+      background: rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius: 12px;
+      padding: 14px 14px 10px;
+      transition: border-color .2s ease, background .2s ease, transform .05s ease;
+    }
+    .field:hover{ border-color: rgba(255,255,255,.18); }
+    .label{
+      display:block;
+      font-size: 16px; 
+      line-height: 1.5;
+      color: var(--muted);
+      margin-bottom: 8px;
+      letter-spacing:.2px;
+    }
+    .controls{
+      display:flex; gap:14px; flex-wrap: wrap; align-items:center;
+    }
+
+    input[type="number"],
+    select{
+      width:100%;
+      background: rgba(0,0,0,.25);
+      border: 1px solid rgba(255,255,255,.10);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 12px 12px;
+      font-size: 15px;
+      outline:none;
+      transition: box-shadow .2s ease, border-color .2s ease, transform .05s ease;
+    }
+    input[type="number"]:focus,
+    select:focus{
+      border-color: var(--accent);
+      box-shadow: var(--focus-ring);
+    }
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button{ -webkit-appearance: none; margin:0; }
+    input[type="number"]{ -moz-appearance: textfield; }
+
+    /* Pretty radio buttons */
+    .radio{
+      position: relative; display:flex; align-items:center; gap:10px;
+      padding: 10px 12px;
+      border:1px solid rgba(255,255,255,.08);
+      border-radius: 999px;
+      cursor:pointer; user-select:none;
+      transition: border-color .2s ease, background .2s ease, transform .05s ease;
+    }
+    .radio:hover{ border-color: rgba(255,255,255,.20); }
+    .radio input{
+      appearance: none; -webkit-appearance: none; -moz-appearance: none;
+      width: 18px; height: 18px; border-radius: 50%;
+      outline:none; margin:0;
+      border:2px solid rgba(255,255,255,.5);
+      background: transparent;
+      position: relative;
+    }
+    .radio input:checked{
+      border-color: transparent;
+      background:
+        radial-gradient(circle at center, var(--accent-2) 0 45%, transparent 47%),
+        radial-gradient(circle at center, var(--accent) 48% 100%, transparent 0);
+    }
+    .hint{ font-size:12px; color:var(--muted); margin-top:6px; }
+
+    .actions{
+      display:flex; gap:12px; flex-wrap: wrap; justify-content:center; margin-top: 6px;
+    }
+    .btn{
+      appearance:none; border:none; cursor:pointer; font-weight:700;
+      font-size: large;
+      padding: 12px 18px; border-radius: 12px; letter-spacing:.3px;
+      transition: transform .05s ease, filter .15s ease, box-shadow .2s ease;
+    }
+    .btn-primary{
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      color:#06101a; box-shadow: 0 6px 18px rgba(124,58,237,.35);
+    }
+    .btn-secondary{
+      background: rgba(255,255,255,.08);
+      color: var(--text); border:1px solid rgba(255,255,255,.12);
+    }
+    .btn:active{ transform: translateY(1px); }
+    .req{ color: var(--accent-2); margin-left:4px; }
+    .section-title{
+      grid-column: span 12;
+      font-weight:800; letter-spacing:.4px;
+      margin-top: 8px; margin-bottom: 2px;
+      color:#e9e9ff;
+      font-size: larger;
+    }
+    .hr{
+      height:1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent);
+      grid-column: span 12; margin: 4px 0 10px;
+    }
+    footer {
+      text-align: center;
+      font-size: 15px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.03);
+      padding: 16px 10px 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 0 0 var(--radius) var(--radius);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.02);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      letter-spacing: 0.2px;
+    }
+
+    footer span.heart {
+      color: var(--accent);
+    }
+
+    footer strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+
+  </style>
+</head>
+<body>
+  <main>
+    <div class="wrap">
+      <div class="card">
+        <div class="header">
+          <span class="badge">ASD Predictor</span>
+          <h1>Autism Screening Questionnaire</h1>
+        </div>
+        <p class="sub">Please answer all questions below. Fields marked with <span class="req">*</span> are required.</p>
+
+        <form action="/predict" method="post" autocomplete="off">
+          <div class="grid">
+            <div class="section-title">Behavioral Questions (Yes/No)</div>
+            <div class="hr"></div>
+
+            <!-- Q1 -->
+            <div class="field col-6">
+              <label class="label">1) I mostly notice small sounds when others do not <span class="req">*</span></label>
+              <div class="controls">
+                <label class="radio"><input type="radio" name="A1" value="yes" required> Yes</label>
+                <label class="radio"><input type="radio" name="A1" value="no"> No</label>
+              </div>
+            </div>
+
+            <!-- Q2 -->
+            <div class="field col-6">
+              <label class="label">2) I generally focus on the entire picture, rather than small details <span class="req">*</span></label>
+              <div class="controls">
+                <label class="radio"><input type="radio" name="A2" value="yes" required> Yes</label>
+                <label class="radio"><input type="radio" name="A2" value="no"> No</label>
+              </div>
+            </div>
+
+            <!-- Q3 -->
+            <div class="field col-6">
+              <label class="label">3) I find it easy to do more than one thing at a time <span class="req">*</span></label>
+              <div class="controls">
+                <label class="radio"><input type="radio" name="A3" value="yes" required> Yes</label>
+                <label class="radio"><input type="radio" name="A3" value="no"> No</label>
+              </div>
+            </div>
+
+            <!-- Q4 -->
+            <div class="field col-6">
+              <label class="label">4) During an interruption, I can switch back quickly to what I was doing <span class="req">*</span></label>
+              <div class="controls">
+                <label class="radio"><input type="radio" name="A4" value="yes" required> Yes</label>
+                <label class="radio"><input type="radio" name="A4" value="no"> No</label>
+              </div>
+            </div>
+
+            <!-- Q5 -->
+            <div class="field col-6">
+              <label class="label">5) I find it easy to read between the lines when talking to someone <span class="req">*</span></label>
+              <div class="controls">
+                <label class="radio"><input type="radio" name="A5" value="yes" required> Yes</label>
+                <label class="radio"><input type="radio" name="A5" value="no"> No</label>
+              </div>
+            </div>
+
+            <!-- Q6 -->
+            <div class="field col-6">
+              <label class="label">6) I can tell if someone I’m talking to is getting bored <span class="req">*</span></label>
+              <div class="controls">
+                <label class="radio"><input type="radio" name="A6" value="yes" required> Yes</label>
+                <label class="radio"><input type="radio" name="A6" value="no"> No</label>
+              </div>
+            </div>
+
+            <!-- Q7 -->
+            <div class="field col-6">
+              <label class="label">7) When reading a story, it’s hard to work out the characters’ intentions <span class="req">*</span></label>
+              <div class="controls">
+                <label class="radio"><input type="radio" name="A7" value="yes" required> Yes</label>
+                <label class="radio"><input type="radio" name="A7" value="no"> No</label>
+              </div>
+            </div>
+
+            <!-- Q8 -->
+            <div class="field col-6">
+              <label class="label">8) I like collecting information about groups of things (e.g., birds, cars, plants, trains) <span class="req">*</span></label>
+              <div class="controls">
+                <label class="radio"><input type="radio" name="A8" value="yes" required> Yes</label>
+                <label class="radio"><input type="radio" name="A8" value="no"> No</label>
+              </div>
+            </div>
+
+            <!-- Q9 -->
+            <div class="field col-6">
+              <label class="label">9) I find it easy to work out what someone is thinking or feeling from their face <span class="req">*</span></label>
+              <div class="controls">
+                <label class="radio"><input type="radio" name="A9" value="yes" required> Yes</label>
+                <label class="radio"><input type="radio" name="A9" value="no"> No</label>
+              </div>
+            </div>
+
+            <!-- Q10 -->
+            <div class="field col-6">
+              <label class="label">10) I face difficulty in working out people’s intentions <span class="req">*</span></label>
+              <div class="controls">
+                <label class="radio"><input type="radio" name="A10" value="yes" required> Yes</label>
+                <label class="radio"><input type="radio" name="A10" value="no"> No</label>
+              </div>
+            </div>
+
+            <div class="section-title">Demographics & History</div>
+            <div class="hr"></div>
+
+            <!-- Age -->
+            <div class="field col-6">
+              <label class="label">11) Age <span class="req">*</span></label>
+              <input type="number" name="age" min="1" max="120" step="1" placeholder="Enter age in years" required />
+              <div class="hint">Whole years only.</div>
+            </div>
+
+            <!-- Gender -->
+            <div class="field col-6">
+              <label class="label">12) Gender <span class="req">*</span></label>
+              <select name="gender" required>
+                <option value="" disabled selected>Select gender</option>
+                <option value="m">Male</option>
+                <option value="f">Female</option>
+              </select>
+            </div>
+
+            <!-- Ethnicity -->
+            <div class="field col-6">
+              <label class="label">13) Ethnicity <span class="req">*</span></label>
+              <select name="ethnicity" required>
+                <option value="" disabled selected>Select ethnicity</option>
+                <option>Asian</option>
+                <option>Black</option>
+                <option>Hispanic</option>
+                <option>Latino</option>
+                <option>Middle Eastern</option>
+                <option>Others</option>
+                <option>Pasifika</option>
+                <option>South Asian</option>
+                <option>Turkish</option>
+                <option>White-European</option>
+              </select>
+            </div>
+
+
+            <!-- Jaundice -->
+            <div class="field col-6">
+              <label class="label">14) Jaundice (history) <span class="req">*</span></label>
+              <select name="jaundice" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+
+            <!-- Family history (austim) -->
+            <div class="field col-6">
+              <label class="label">15) Immediate family member diagnosed with autism? <span class="req">*</span></label>
+              <select name="austim" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+
+            <!-- Country -->
+            <div class="field col-6">
+            <label class="label">16) Country of Residence <span class="req">*</span></label>
+            <select name="contry_of_res" required>
+              <option value="" disabled selected>Select country</option>
+              <option>Afghanistan</option> <option>American Samoa</option> <option>Angola</option> 
+              <option>Argentina</option><option>Armenia</option><option>Aruba</option>
+              <option>Australia</option><option>Austria</option><option>Azerbaijan</option><option>Bahamas</option>
+              <option>Bangladesh</option><option>Belgium</option><option>Bolivia</option>
+              <option>Brazil</option><option>Burundi</option><option>Canada</option><option>China</option>
+              <option>Cyprus</option><option>Czech Republic</option><option>Egypt</option>
+              <option>Ethiopia</option><option>France</option><option>Germany</option>
+              <option>Iceland</option><option>India</option><option>Iran</option><option>Iraq</option>
+              <option>Ireland</option><option>Italy</option><option>Japan</option><option>Jordan</option>
+              <option>Kazakhstan</option><option>Malaysia</option><option>Mexico</option><option>Nicaragua</option>
+              <option>Niger</option><option>Netherlands</option><option>New Zealand</option><option>Oman</option>
+              <option>Pakistan</option><option>Romania</option><option>Russia</option><option>Saudi Arabia</option>
+              <option>Serbia</option><option>Sierra Leone</option><option>South Africa</option><option>Spain</option>
+              <option>Sri Lanka</option><option>Sweden</option><option>Tonga</option><option>Ukraine</option>
+              <option>United Arab Emirates</option><option>United Kingdom</option><option>United States</option>
+              <option>Vietnam</option>
+            </select>
+          </div>
+
+
+            <div class="col-12 actions">
+              <button class="btn btn-secondary" type="reset">Reset</button>
+              <button class="btn btn-primary" type="submit">Predict</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+  <footer>
+    &copy; 2025 Autism Prediction Project | Designed with <span class="heart">❤️</span><br /><br />
+    <strong>A JRS Product</strong>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prediction Result</title>
+  <style>
+    :root{
+      --bg1:#0f172a;      /* slate-900 */
+      --bg2:#1e293b;      /* slate-800 */
+      --card:#0b1224cc;   /* glass */
+      --accent:#7c3aed;   /* violet-600 */
+      --accent-2:#22d3ee; /* cyan-400 */
+      --text:#e2e8f0;     /* slate-200 */
+      --muted:#94a3b8;    /* slate-400 */
+      --radius:16px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial;
+      background: radial-gradient(1200px 800px at 10% -10%, #1f2455 0%, transparent 60%),
+                  radial-gradient(900px 700px at 100% 0%, #083344 0%, transparent 55%),
+                  linear-gradient(160deg, var(--bg1), var(--bg2));
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .result-box {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      max-width: 700px;
+      width: 100%;
+      padding: 50px 40px;
+      text-align: center;
+    }
+
+    .result-box h1 {
+      font-size: clamp(28px, 3vw, 38px);
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 24px;
+    }
+
+    .result-box p {
+      font-size: 24px;
+      line-height: 1.6;
+      color: var(--text);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 15px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.03);
+      padding: 16px 10px 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 0 0 var(--radius) var(--radius);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.02);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      letter-spacing: 0.2px;
+    }
+
+    footer span.heart {
+      color: var(--accent);
+    }
+
+    footer strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <div class="result-box">
+      <h1>Prediction Result</h1>
+      <p>{{ result }}</p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Autism Prediction Project | Designed with <span class="heart">❤️</span><br /><br />
+    <strong>A JRS Product</strong>
+  </footer>
+
+</body>
+</html>
