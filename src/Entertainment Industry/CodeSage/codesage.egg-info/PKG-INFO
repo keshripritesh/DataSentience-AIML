@@ -1,0 +1,162 @@
+Metadata-Version: 2.4
+Name: codesage
+Version: 0.1.0
+Summary: AI-Based Code Complexity Estimator using AST analysis
+Home-page: https://github.com/yourusername/codesage
+Author: CodeSage Team
+Author-email: team@codesage.dev
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Software Development :: Quality Assurance
+Classifier: Topic :: Software Development :: Testing
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: radon>=5.1.0
+Requires-Dist: pandas>=1.5.0
+Requires-Dist: numpy>=1.21.0
+Requires-Dist: matplotlib>=3.5.0
+Requires-Dist: plotly>=5.10.0
+Requires-Dist: rich>=12.0.0
+Requires-Dist: pytest>=7.0.0
+Requires-Dist: pytest-cov>=4.0.0
+Requires-Dist: black>=22.0.0
+Requires-Dist: flake8>=5.0.0
+Requires-Dist: scikit-learn>=1.0.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# 🧩 CodeSage – AI-Based Code Complexity Estimator
+
+A powerful Python tool that analyzes code complexity using Abstract Syntax Tree (AST) analysis and static code metrics to provide actionable insights for code maintainability.
+
+## ✨ Features
+
+- **Cyclomatic Complexity Analysis** - Measures branching complexity of functions
+- **Maintainability Index** - Calculates overall code maintainability score
+- **Function Length & Nesting Depth** - Identifies overly complex functions
+- **Smart Suggestions** - AI-like recommendations for code improvements
+- **Multiple Output Formats** - CLI reports and HTML dashboards
+- **Project-wide Analysis** - Analyze entire Python projects or single files
+
+## 🚀 Quick Start
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/codesage.git
+cd codesage
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Install in development mode
+pip install -e .
+```
+
+### Usage
+
+```bash
+# Analyze a single file
+python -m codesage analyze path/to/file.py
+
+# Analyze an entire project
+python -m codesage analyze path/to/project/
+
+# Generate HTML report
+python -m codesage analyze path/to/project/ --html
+
+# Show help
+python -m codesage --help
+```
+
+## 📊 Example Output
+
+```
+Analyzing project: my_project/
+
+File: utils.py
+  - Function: process_data → Cyclomatic Complexity: 12 ⚠️
+  - Function: clean_input → Complexity: 4 ✅
+
+Maintainability Index (overall): 72/100
+Suggestions:
+ - process_data is too complex, consider splitting into smaller functions.
+ - main.py exceeds 500 lines, consider modularizing.
+```
+
+## 🛠 Tech Stack
+
+- **Core Analysis:** `ast`, `radon` (for complexity metrics)
+- **Data Handling:** `pandas`, `numpy`
+- **Visualization:** `matplotlib`, `plotly`
+- **CLI:** `argparse`, `rich` (for pretty terminal output)
+- **Testing:** `pytest`
+
+## 🧪 Running Tests
+
+```bash
+# Run all tests
+pytest
+
+# Run with coverage
+pytest --cov=codesage
+
+# Run specific test file
+pytest tests/test_analyzer.py
+```
+
+## 📁 Project Structure
+
+```
+codesage/
+├── codesage/
+│   ├── __init__.py
+│   ├── analyzer.py      # Core analysis logic
+│   ├── metrics.py       # Metric calculations
+│   ├── reporter.py      # Report generation
+│   └── cli.py          # Command-line interface
+├── tests/
+│   ├── __init__.py
+│   ├── test_analyzer.py
+│   ├── test_metrics.py
+│   ├── test_reporter.py
+│   └── test_cli.py
+├── examples/
+│   └── sample_code.py
+├── requirements.txt
+├── setup.py
+└── README.md
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Inspired by tools like SonarQube and CodeClimate
+- Built with Python's excellent AST module
+- Uses radon library for advanced code metrics

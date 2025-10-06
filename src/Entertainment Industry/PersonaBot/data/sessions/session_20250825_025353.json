@@ -1,0 +1,162 @@
+{
+  "conversation_history": [
+    {
+      "role": "assistant",
+      "content": "Good day. I'm available to help you with any inquiries or discussions.",
+      "timestamp": "2025-08-25T02:53:53.604268",
+      "personality": {
+        "humor": 0.5033954977989197,
+        "formality": 0.4888124167919159,
+        "empathy": 0.5028990507125854,
+        "sarcasm": 0.30890586972236633,
+        "enthusiasm": 0.6066538691520691,
+        "professionalism": 0.7107682228088379,
+        "creativity": 0.4998970925807953,
+        "assertiveness": 0.4076716899871826
+      }
+    },
+    {
+      "role": "user",
+      "content": "Test message 2",
+      "timestamp": "2025-08-25T02:53:53.604274",
+      "personality": {
+        "humor": 0.5033954977989197,
+        "formality": 0.4888124167919159,
+        "empathy": 0.5028990507125854,
+        "sarcasm": 0.30890586972236633,
+        "enthusiasm": 0.6066538691520691,
+        "professionalism": 0.7107682228088379,
+        "creativity": 0.4998970925807953,
+        "assertiveness": 0.4076716899871826
+      }
+    },
+    {
+      "role": "assistant",
+      "content": "Based on the information provided,",
+      "timestamp": "2025-08-25T02:53:53.617512",
+      "personality": {
+        "humor": 0.5068008899688721,
+        "formality": 0.47762978076934814,
+        "empathy": 0.5058104395866394,
+        "sarcasm": 0.3178192675113678,
+        "enthusiasm": 0.6133012771606445,
+        "professionalism": 0.7215198278427124,
+        "creativity": 0.4997667968273163,
+        "assertiveness": 0.4153751730918884
+      },
+      "rewards": {
+        "engagement": 0.049987133333333336,
+        "sentiment": 0.10300000000000001,
+        "relevance": 0.1875,
+        "coherence": 0.81,
+        "personality": 0.5,
+        "total": 0.21939485333333336
+      }
+    }
+  ],
+  "personality_summary": {
+    "current_traits": {
+      "humor": 0.5068008899688721,
+      "formality": 0.47762978076934814,
+      "empathy": 0.5058104395866394,
+      "sarcasm": 0.3178192675113678,
+      "enthusiasm": 0.6133012771606445,
+      "professionalism": 0.7215198278427124,
+      "creativity": 0.4997667968273163,
+      "assertiveness": 0.4153751730918884
+    },
+    "stability": 0.9999630337745772,
+    "adaptation_count": 2,
+    "drift": 0.0421241452309403,
+    "summary": "Personality: Moderate humor, Moderate formality, Moderate empathy, Moderate sarcasm, Moderate enthusiasm, High professionalism, Moderate creativity, Moderate assertiveness"
+  },
+  "performance_summary": {
+    "total_interactions": 2,
+    "average_sentiment": 0.019570000000000004,
+    "average_engagement": 0.009497907533333336,
+    "personality_adaptations": 2,
+    "session_duration": "0:00:00.127692",
+    "conversation_length": 3,
+    "rl_enabled": true,
+    "rl_stats": {
+      "epsilon": 0.1,
+      "memory_size": 1,
+      "training_stats": {
+        "episodes": 1,
+        "total_reward": 0.21939485333333336,
+        "average_reward": 0.21939485333333336,
+        "loss_history": [],
+        "epsilon_history": []
+      },
+      "device": "cpu",
+      "state_dim": 18,
+      "action_dim": 8
+    }
+  },
+  "settings": {
+    "model": {
+      "model_name": "gpt2",
+      "max_length": 512,
+      "temperature": 0.8,
+      "top_p": 0.9,
+      "top_k": 50,
+      "repetition_penalty": 1.1,
+      "do_sample": true
+    },
+    "personality": {
+      "traits": [
+        "humor",
+        "formality",
+        "empathy",
+        "sarcasm",
+        "enthusiasm",
+        "professionalism",
+        "creativity",
+        "assertiveness"
+      ],
+      "default_values": {
+        "humor": 0.5,
+        "formality": 0.5,
+        "empathy": 0.5,
+        "sarcasm": 0.3,
+        "enthusiasm": 0.6,
+        "professionalism": 0.7,
+        "creativity": 0.5,
+        "assertiveness": 0.4
+      }
+    },
+    "rl": {
+      "learning_rate": 0.001,
+      "gamma": 0.99,
+      "epsilon": 0.1,
+      "epsilon_decay": 0.995,
+      "epsilon_min": 0.01,
+      "memory_size": 10000,
+      "batch_size": 32,
+      "update_frequency": 100
+    },
+    "reward": {
+      "engagement_weight": 0.4,
+      "sentiment_weight": 0.3,
+      "relevance_weight": 0.2,
+      "coherence_weight": 0.1,
+      "max_conversation_length": 50,
+      "min_response_length": 5
+    },
+    "ui": {
+      "cli_prompt": "\ud83e\udd16 PersonaBot > ",
+      "web_title": "PersonaBot - Advanced Conversational AI",
+      "web_description": "Dynamic personality adaptation using RL",
+      "max_display_messages": 20
+    },
+    "data": {
+      "sessions_dir": "data/sessions",
+      "models_dir": "data/models",
+      "logs_dir": "data/logs",
+      "session_format": "json",
+      "auto_save": true,
+      "save_frequency": 10
+    }
+  },
+  "timestamp": "2025-08-25T02:53:53.618163"
+}

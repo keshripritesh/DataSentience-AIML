@@ -1,0 +1,26 @@
+{
+  "factories": [
+    {"id": "F1", "production_capacity": 10, "unit_production_cost": 2.0}
+  ],
+  "warehouses": [
+    {"id": "W1", "storage_capacity": 50, "unit_holding_cost": 0.2}
+  ],
+  "retailers": [
+    {"id": "R1", "penalty_unmet_demand": 5.0}
+  ],
+  "edges_fw": [
+    {"source_id": "F1", "target_id": "W1", "distance": 10, "unit_transport_cost": 0.5}
+  ],
+  "edges_wr": [
+    {"source_id": "W1", "target_id": "R1", "distance": 5, "unit_transport_cost": 0.3}
+  ],
+  "demand_schedule": [
+    {"R1": 5},
+    {"R1": 6},
+    {"R1": 7},
+    {"R1": 8},
+    {"R1": 9}
+  ]
+}
+
+

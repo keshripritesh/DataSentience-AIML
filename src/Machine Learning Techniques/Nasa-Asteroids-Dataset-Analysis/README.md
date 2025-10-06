@@ -1,27 +1,17 @@
-# Nasa Asteroids Dataset Analysis :
-  The aim of this project is to explore insights about the dataset and explore features associated with the hazardness of the asteroids. In order to collect insights about the data I used data visualization techniques, summary statistics and correlations.
- Steps Done to get the insights:
- - Data Cleaning and dropping unwanted features.
- - Data Visualization.
- - Using statistical measures to define the relation between asteroid hazardness and the quantitive change of the given feature.
+# 🌌 NASA Asteroids Dataset Analysis
 
+This project analyzes NASA’s asteroid dataset to uncover key insights and predict asteroid hazardness. It combines **data cleaning, visualization, feature engineering, and machine learning (XGBoost)**, with a **Streamlit app** for real-time predictions.
 
-# Libraries and Installs :
-```
-pip install "pandas==1.4.0"
-```
+## 📊 Workflow
+- **Data Cleaning**: Removed duplicates, irrelevant features, and handled missing values.  
+- **EDA**: Visualized distributions, correlations, and asteroid characteristics.  
+- **Feature Engineering**: Focused on quantitative features affecting hazardness.  
+- **Machine Learning**: Trained an XGBoost classifier, saved as `xgb_model.pkl`.  
+- **Deployment**: Streamlit app (`app.py`) for interactive predictions.  
 
-```
-pip install "numpy==1.22.2"
-```
-
-```
-pip install  "seaborn==0.11.2"
-```
-
-```
-pip install "matplotlib==3.5.1"
-```
-
-## Author:
-Kareem Elozeiri
+## ⚙️ Installation
+```bash
+git clone https://github.com/<your-username>/Nasa-Asteroids-Dataset.git
+cd Nasa-Asteroids-Dataset
+pip install -r requirements.txt
+streamlit run app.py

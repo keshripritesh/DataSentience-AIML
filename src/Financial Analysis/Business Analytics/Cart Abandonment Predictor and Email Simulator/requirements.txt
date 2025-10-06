@@ -1,0 +1,9 @@
+imbalanced-learn==0.13.0
+jupyter==1.1.1
+matplotlib==3.10.3
+notebook==7.4.4
+numpy==1.26.4
+pandas==2.2.2
+scikit-learn==1.6.1
+seaborn==0.13.2
+xgboost==3.0.2

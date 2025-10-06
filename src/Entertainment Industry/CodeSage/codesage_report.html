@@ -1,0 +1,230 @@
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>CodeSage Analysis Report</title>
+            <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+            <style>
+                body {
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    margin: 0;
+                    padding: 20px;
+                    background-color: #f5f5f5;
+                }
+                .container {
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    background: white;
+                    padding: 30px;
+                    border-radius: 10px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                }
+                .header {
+                    text-align: center;
+                    margin-bottom: 30px;
+                    padding-bottom: 20px;
+                    border-bottom: 2px solid #e0e0e0;
+                }
+                .header h1 {
+                    color: #2c3e50;
+                    margin: 0;
+                    font-size: 2.5em;
+                }
+                .header p {
+                    color: #7f8c8d;
+                    margin: 10px 0 0 0;
+                }
+                .metrics-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                    gap: 20px;
+                    margin-bottom: 30px;
+                }
+                .metric-card {
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    color: white;
+                    padding: 20px;
+                    border-radius: 10px;
+                    text-align: center;
+                }
+                .metric-card h3 {
+                    margin: 0 0 10px 0;
+                    font-size: 1.2em;
+                }
+                .metric-card .value {
+                    font-size: 2em;
+                    font-weight: bold;
+                    margin: 10px 0;
+                }
+                .section {
+                    margin-bottom: 40px;
+                }
+                .section h2 {
+                    color: #2c3e50;
+                    border-bottom: 2px solid #3498db;
+                    padding-bottom: 10px;
+                    margin-bottom: 20px;
+                }
+                .insights {
+                    background: #ecf0f1;
+                    padding: 20px;
+                    border-radius: 10px;
+                    margin-bottom: 20px;
+                }
+                .insights h3 {
+                    color: #2c3e50;
+                    margin-top: 0;
+                }
+                .insights ul {
+                    margin: 0;
+                    padding-left: 20px;
+                }
+                .insights li {
+                    margin-bottom: 8px;
+                    color: #34495e;
+                }
+                .hotspots {
+                    background: #fff3cd;
+                    border: 1px solid #ffeaa7;
+                    border-radius: 10px;
+                    padding: 20px;
+                    margin-bottom: 20px;
+                }
+                .hotspots h3 {
+                    color: #856404;
+                    margin-top: 0;
+                }
+                .hotspot-item {
+                    background: white;
+                    padding: 15px;
+                    margin-bottom: 10px;
+                    border-radius: 5px;
+                    border-left: 4px solid #dc3545;
+                }
+                .hotspot-item strong {
+                    color: #dc3545;
+                }
+                .chart-container {
+                    margin: 20px 0;
+                    border: 1px solid #e0e0e0;
+                    border-radius: 10px;
+                    padding: 20px;
+                    background: white;
+                }
+                .suggestions {
+                    background: #d4edda;
+                    border: 1px solid #c3e6cb;
+                    border-radius: 10px;
+                    padding: 20px;
+                }
+                .suggestions h3 {
+                    color: #155724;
+                    margin-top: 0;
+                }
+                .suggestions ul {
+                    margin: 0;
+                    padding-left: 20px;
+                }
+                .suggestions li {
+                    margin-bottom: 8px;
+                    color: #155724;
+                }
+                .footer {
+                    text-align: center;
+                    margin-top: 40px;
+                    padding-top: 20px;
+                    border-top: 1px solid #e0e0e0;
+                    color: #7f8c8d;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <div class="header">
+                    <h1>🧩 CodeSage Analysis Report</h1>
+                    <p>AI-Enhanced Code Complexity Analysis</p>
+                    <p>Generated on 2025-08-24 17:22:16</p>
+                </div>
+                
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <h3>Total Files</h3>
+                        <div class="value">12</div>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Total Functions</h3>
+                        <div class="value">155</div>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Avg Complexity</h3>
+                        <div class="value">5.0</div>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Maintainability</h3>
+                        <div class="value">93.3/100</div>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Risk Level</h3>
+                        <div class="value">LOW</div>
+                    </div>
+                    <div class="metric-card">
+                        <h3>AI Anomaly Score</h3>
+                        <div class="value">14.3</div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2>🤖 AI Insights</h2>
+                    <div class="insights">
+                        <h3>Intelligent Analysis Results</h3>
+                        <ul>
+                            <li>📏 AI identified 3 functions with high line count (avg: 101.3 lines). Consider extracting helper methods.</li><li>📏 AI identified 3 functions with high line count (avg: 192.7 lines). Consider extracting helper methods.</li><li>📈 High variance in file sizes detected. Consider standardizing module sizes.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2>📊 Complexity Analysis</h2>
+                    <div class="chart-container">
+                        <div>                            <div id="3b67d895-0f7e-4774-9561-968148fcb920" class="plotly-graph-div" style="height:400px; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("3b67d895-0f7e-4774-9561-968148fcb920")) {                    Plotly.newPlot(                        "3b67d895-0f7e-4774-9561-968148fcb920",                        [{"marker":{"color":"#3498db"},"name":"Function Complexity","nbinsx":20,"opacity":0.7,"x":[1,1,6,3,4,2,2,4,11,10,4,5,1,4,2,4,12,6,5,13,1,1,9,1,8,3,1,4,3,4,4,2,9,5,5,4,3,1,5,2,2,2,2,4,2,2,1,2,4,4,1,1,5,2,2,1,2,8,3,15,23,15,1,21,1,1,4,13,10,3,7,6,16,11,2,9,5,5,7,11,3,1,4,2,3,2,6,4,2,2,9,9,2,11,2,8,5,5,3,4,3,5,5,6,5,4,4,3,6,1,2,2,2,2,2,2,2,2,3,10,10,8,5,3,2,10,8,1,2,2,2,9,4,5,5,6,2,5,3,5,3,5,3,8,2,2,2,2,2,2,2,1,2,5,7],"type":"histogram"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"title":{"text":"Distribution of Cyclomatic Complexity"},"xaxis":{"title":{"text":"Cyclomatic Complexity"}},"yaxis":{"title":{"text":"Number of Functions"}},"showlegend":false,"height":400},                        {"responsive": true}                    )                };            </script>        </div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2>📈 Maintainability Overview</h2>
+                    <div class="chart-container">
+                        <div>                            <div id="c505db62-9b6c-4b79-9e60-29badae1401a" class="plotly-graph-div" style="height:400px; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("c505db62-9b6c-4b79-9e60-29badae1401a")) {                    Plotly.newPlot(                        "c505db62-9b6c-4b79-9e60-29badae1401a",                        [{"marker":{"color":"#2ecc71"},"name":"Maintainability Index","opacity":0.7,"x":["setup.py","codesage\\analyzer.py","codesage\\cli.py","codesage\\metrics.py","codesage\\reporter.py","codesage\\__init__.py","examples\\sample_code.py","tests\\test_analyzer.py","tests\\test_cli.py","tests\\test_metrics.py","tests\\test_reporter.py","tests\\__init__.py"],"y":[100.0,94.05217626605062,87.34706111804437,94.7643308300637,94.75398840055016,100.0,67.8633722143485,89.69606934014872,96.11674811449429,97.76954437954227,97.69923028530422,100.0],"type":"bar"},{"marker":{"color":"#e74c3c"},"name":"AI Quality Score (Inverted)","opacity":0.7,"x":["setup.py","codesage\\analyzer.py","codesage\\cli.py","codesage\\metrics.py","codesage\\reporter.py","codesage\\__init__.py","examples\\sample_code.py","tests\\test_analyzer.py","tests\\test_cli.py","tests\\test_metrics.py","tests\\test_reporter.py","tests\\__init__.py"],"y":[100.0,79.47368421052632,73.75,96.78571428571429,83.61111111111111,100.0,57.5,71.5909090909091,82.72727272727272,100.0,83.21428571428572,100.0],"type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"title":{"text":"File Maintainability vs AI Quality Score"},"xaxis":{"title":{"text":"Files"}},"yaxis":{"title":{"text":"Score"}},"barmode":"group","height":400},                        {"responsive": true}                    )                };            </script>        </div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2>🔥 Risk Hotspots</h2>
+                    <div class="hotspots">
+                        <h3>High-Risk Areas Identified by AI</h3>
+                        
+                    </div>
+                    <div class="chart-container">
+                        <p>No risk hotspots identified.</p>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2>💡 Improvement Suggestions</h2>
+                    <div class="suggestions">
+                        <h3>AI-Generated Recommendations</h3>
+                        <ul>
+                            <li>Function 'test_analyze_project_single_file' in tests\test_analyzer.py: This function is doing too much - consider splitting it</li><li>Function 'long_function_with_many_operations' in examples\sample_code.py: Consider breaking this function into smaller, more focused functions</li><li>Function '_analyze_complexity_patterns' in codesage\analyzer.py: This function is doing too much - consider splitting it</li><li>Function 'test_calculate_complexity_distribution' in tests\test_analyzer.py: This function is doing too much - consider splitting it</li><li>Function '_create_sample_analysis_result' in tests\test_reporter.py: This function is doing too much - consider splitting it</li><li>File tests\test_reporter.py is quite large (578 lines). Consider breaking it into smaller, more focused modules.</li><li>Function 'test_calculate_project_metrics' in tests\test_analyzer.py: This function is doing too much - consider splitting it</li><li>Function 'analyze_file' in codesage\metrics.py: This function is doing too much - consider splitting it</li><li>Function 'test_analyze_project_directory' in tests\test_analyzer.py: This function is doing too much - consider splitting it</li><li>File codesage\analyzer.py is quite large (512 lines). Consider breaking it into smaller, more focused modules.</li><li>Function 'very_complex_algorithm' in examples\sample_code.py: Consider breaking this function into smaller, more focused functions</li><li>Function 'calculate_cyclomatic_complexity' in codesage\metrics.py: Use early returns to reduce nesting depth</li><li>Function 'long_function_with_many_operations' in examples\sample_code.py: This function is doing too much - consider splitting it</li><li>Function 'test_large_analysis_result' in tests\test_reporter.py: This function is doing too much - consider splitting it</li><li>Function 'deeply_nested_function' in examples\sample_code.py: This function is doing too much - consider splitting it</li><li>Function 'create_argument_parser' in codesage\cli.py: This function is doing too much - consider splitting it</li><li>Function '_generate_html_content' in codesage\reporter.py: This function is doing too much - consider splitting it</li><li>Function 'test_train_models_sufficient_data' in tests\test_analyzer.py: This function is doing too much - consider splitting it</li><li>File examples\sample_code.py is quite large (633 lines). Consider breaking it into smaller, more focused modules.</li><li>File tests\test_cli.py is quite large (503 lines). Consider breaking it into smaller, more focused modules.</li><li>File tests\test_analyzer.py is quite large (787 lines). Consider breaking it into smaller, more focused modules.</li><li>Function 'function_with_many_parameters' in examples\sample_code.py: Consider using a data class or configuration object</li><li>Function 'test_analyze_project_single_file' in tests\test_analyzer.py: Consider breaking this function into smaller, more focused functions</li><li>Function 'very_complex_algorithm' in examples\sample_code.py: This function is doing too much - consider splitting it</li><li>Function 'deeply_nested_function' in examples\sample_code.py: Use early returns to reduce nesting depth</li><li>Function 'test_generate_suggestions' in tests\test_analyzer.py: This function is doing too much - consider splitting it</li><li>Function 'run_analysis' in codesage\cli.py: This function is doing too much - consider splitting it</li><li>Function 'complex_data_analysis' in examples\sample_code.py: Use early returns to reduce nesting depth</li><li>Function 'test_identify_risk_hotspots' in tests\test_analyzer.py: This function is doing too much - consider splitting it</li><li>Function 'main' in codesage\cli.py: This function is doing too much - consider splitting it</li><li>Function 'very_complex_algorithm' in examples\sample_code.py: Use early returns to reduce nesting depth</li><li>File codesage\reporter.py is quite large (625 lines). Consider breaking it into smaller, more focused modules.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer">
+                    <p>Generated by CodeSage - AI-Enhanced Code Complexity Estimator</p>
+                    <p>For more information, visit the CodeSage documentation</p>
+                </div>
+            </div>
+        </body>
+        </html>
+        

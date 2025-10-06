@@ -1,0 +1,23 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Output files
+*.csv
+final_outputdata.csv
+
+# Dataset folder (exclude if datasets should not be versioned)
+datasets/
+
+# Environment files
+.env
+.venv/
+env/
+venv/

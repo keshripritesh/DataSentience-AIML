@@ -1,0 +1,104 @@
+{
+  "person_age": {
+    "type": "numeric",
+    "min": 20.0,
+    "max": 144.0,
+    "mean": 27.73459992019889
+  },
+  "person_income": {
+    "type": "numeric",
+    "min": 4000.0,
+    "max": 6000000.0,
+    "mean": 66074.84846996715
+  },
+  "person_emp_length": {
+    "type": "numeric",
+    "min": 0.0,
+    "max": 123.0,
+    "mean": 4.789686296787225
+  },
+  "loan_amnt": {
+    "type": "numeric",
+    "min": 500.0,
+    "max": 35000.0,
+    "mean": 9589.371105859243
+  },
+  "loan_int_rate": {
+    "type": "numeric",
+    "min": 5.42,
+    "max": 23.22,
+    "mean": 11.011694892245037
+  },
+  "loan_percent_income": {
+    "type": "numeric",
+    "min": 0.0,
+    "max": 0.83,
+    "mean": 0.1702034928332464
+  },
+  "cb_person_cred_hist_length": {
+    "type": "numeric",
+    "min": 2.0,
+    "max": 30.0,
+    "mean": 5.804211043246064
+  },
+  "loan_to_income": {
+    "type": "numeric",
+    "min": 0.000789473684210526,
+    "max": 0.8299999999999584,
+    "mean": 0.17055340479141168
+  },
+  "high_income": {
+    "type": "numeric",
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.4971609220097603
+  },
+  "person_home_ownership": {
+    "type": "categorical",
+    "choices": [
+      "RENT",
+      "OWN",
+      "MORTGAGE",
+      "OTHER"
+    ]
+  },
+  "loan_intent": {
+    "type": "categorical",
+    "choices": [
+      "PERSONAL",
+      "EDUCATION",
+      "MEDICAL",
+      "VENTURE",
+      "HOMEIMPROVEMENT",
+      "DEBTCONSOLIDATION"
+    ]
+  },
+  "loan_grade": {
+    "type": "categorical",
+    "choices": [
+      "D",
+      "B",
+      "C",
+      "A",
+      "E",
+      "F",
+      "G"
+    ]
+  },
+  "cb_person_default_on_file": {
+    "type": "categorical",
+    "choices": [
+      "Y",
+      "N"
+    ]
+  },
+  "age_group": {
+    "type": "categorical",
+    "choices": [
+      "Young",
+      "Adult",
+      "Middle",
+      "Senior"
+    ]
+  }
+}

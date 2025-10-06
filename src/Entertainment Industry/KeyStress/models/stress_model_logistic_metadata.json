@@ -1,0 +1,30 @@
+{
+  "model_type": "logistic",
+  "feature_names": [
+    "avg_interval",
+    "median_interval",
+    "cpm",
+    "wpm",
+    "error_rate",
+    "backspace_rate",
+    "delete_rate",
+    "corrections_per_100",
+    "pause_count",
+    "pause_rate",
+    "avg_pause_duration",
+    "long_pause_rate",
+    "interval_std",
+    "interval_cv",
+    "interval_range",
+    "interval_iqr",
+    "burst_count",
+    "avg_burst_length",
+    "burst_rate"
+  ],
+  "class_names": [
+    "Low",
+    "Medium",
+    "High"
+  ],
+  "is_trained": true
+}
